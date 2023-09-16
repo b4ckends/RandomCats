@@ -1,7 +1,50 @@
 body {
-    background-color: black;
+    background-color: goldenrod;
 }
 
-h1 {
+h1, h2 {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.imgs {
+    max-width: 100%;
+    width: 500px;
+    height: 500px;
+    margin-right: 50px;
+}
+
+#randomCats {
+    text-align: center;
+    padding-bottom: 400px;
+}
+
+.articles-container {
+    display: flex;
+    justify-content: center;
+}
+
+.articles-container article {
+    text-align: center;
+    margin-right: 20px;
+}
+
+#buttn {
+    margin-top: 10px;
+    background-color: black;
     color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#reload {
+    color: white;
+    background-color: black;
+    cursor: pointer;
+}
+
+#favoritesCats {
+    text-align: center;
 }

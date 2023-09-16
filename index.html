@@ -7,22 +7,42 @@
         <link rel="stylesheet" href="./styles.css">
     </head>
     <body>
-        <h1>Random Cats</h1>
+        <h1>CatApp</h1>
         
         <section id="randomCats">
-            
-            <article>
-                <img width="150" id="img1" alt="Random picture of a Cat"> 
-            </article>
-            
-            <img width="150" id="img2" alt="Random picture of a Cat">
-            <img width="150" id="img3" alt="Random picture of a Cat">
-            <button onclick="reload()">Reload</button>
+
+            <h2>Random Cats</h2>
+
+            <div class="articles-container">
+                <article>
+                    <img id="img1" class="imgs" alt="Random picture of a Cat"> 
+                    <button id="buttn">Save cat in favorites</button>
+                </article>
+                
+                <article>
+                    <img id="img2" class="imgs" alt="Random picture of a Cat"> 
+                    <button id="buttn">Save cat in favorites</button>
+                </article>
+                
+                <article>
+                    <img id="img3" class="imgs" alt="Random picture of a Cat"> 
+                    <button id="buttn">Save cat in favorites</button>
+                </article>
+                
+                <button id="reload" onclick="reload()">Reload</button>
+            </div>
         </section>
         
-        <section id="FavoritesCats">
+        <section id="favoritesCats">
 
-        </section>
+            <h2>Favorites Cats</h2>
+            
+            <article>
+                <img id="img1" class="imgs" alt="Random picture of a Cat">
+                <button id="buttn">Remove cat from favorites</button>
+            </article>
+       </section>
+
         <script src="./main.js"></script>
     </body>
 </html>
