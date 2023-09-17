@@ -1,6 +1,8 @@
-console.log('Hello, world')
+const API_URL_RANDOM = 'https://api.thecatapi.com/v1/images/search?limit=3&api_key=live_EWZan06wFP5a8vLluJLI3ZlFSdHJDt1ifb3m1K1g32j610wLFbqjnnYfZQA9xvIr';
 
-const API_URL = 'https://api.thecatapi.com/v1/images/search?limit=3&api_key=live_EWZan06wFP5a8vLluJLI3ZlFSdHJDt1ifb3m1K1g32j610wLFbqjnnYfZQA9xvIr';
+const API_URL_FAVORITES = "https://api.thecatapi.com/v1/favourites?api_key=live_EWZan06wFP5a8vLluJLI3ZlFSdHJDt1ifb3m1K1g32j610wLFbqjnnYfZQA9xvIr";
+
+const spanError = document.getElementById('error');
 
 // const btn = document.querySelector('#button');
 // btn.addEventListener('click', alr);
@@ -20,11 +22,17 @@ const API_URL = 'https://api.thecatapi.com/v1/images/search?limit=3&api_key=live
 //     });
 // };
 
-async function reload() {
-    const res = await fetch(API_URL)
+async function loadRandomCats() {
+    const res = await fetch(API_URL_RANDOM);
     const data = await res.json();
 
-    console.log(data)
+    console.log('Random');
+    console.log(data);
+
+   if (res.status !== 200) {
+    spanError.innerHTML = "Error: " + res.status;
+    return;
+   } else {
     const img1 = document.getElementById('img1');
     const img2 = document.getElementById('img2');
     const img3 = document.getElementById('img3');
@@ -32,6 +40,20 @@ async function reload() {
     img1.src = data[0].url;
     img2.src = data[1].url;
     img3.src = data[2].url;
-}
+   } 
+};
 
-reload();
+async function loadFavoritesCats() {
+    const res = await fetch(API_URL_FAVORITES);
+    // console.log('Favorites');
+    // const data = await res.json();
+
+    if (res.status !== 200) {
+        const errorMessage = await res.text();
+        spanError.innerHTML = "Error: " + res.status + errorMessage;
+        return;
+    }
+};
+
+loadRandomCats();
+loadFavoritesCats();

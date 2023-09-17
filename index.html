@@ -5,9 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Random Cats</title>
         <link rel="stylesheet" href="./styles.css">
+        <link rel="shortcut icon" href="#">
     </head>
+
     <body>
         <h1>CatApp</h1>
+
+        <span id="error"></span>
         
         <section id="randomCats">
 
@@ -29,7 +33,7 @@
                     <button id="buttn">Save cat in favorites</button>
                 </article>
                 
-                <button id="reload" onclick="reload()">Reload</button>
+                <button id="reload" onclick="loadRandomCats()">Reload</button>
             </div>
         </section>
         
